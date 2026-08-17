@@ -126,7 +126,7 @@ For each requirement:
 
 ### Open Questions
 - Questions that need answers before or during implementation
-- Tag each with who should answer (engineering, design, legal, data, stakeholder)
+- Tag each with who should answer (engineering, design, data, stakeholder) — legal review is handled separately during launch sign-off, not as a per-spec open question
 - Distinguish between blocking questions (must answer before starting) and non-blocking (can resolve during implementation)
 
 ### Timeline Considerations
