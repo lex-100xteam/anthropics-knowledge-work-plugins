@@ -8,7 +8,7 @@ argument-hint: "<update description>"
 
 > If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md).
 
-Update, create, or reprioritize a product roadmap.
+Create, update, or reprioritize a product roadmap.
 
 ## Usage
 
@@ -33,9 +33,9 @@ If no project management tool is connected:
 
 Ask what the user wants to do:
 
-**Add item**: New feature, initiative, or work item to the roadmap
-- Gather: name, description, priority, estimated effort, target timeframe, owner, dependencies
-- Suggest where it fits based on current priorities and capacity
+**Add item**: A new feature, initiative, or work item for the roadmap
+- Collect: name, description, priority, estimated effort, target timeframe, owner, and dependencies
+- Recommend where it fits given current priorities and available capacity
 
 **Update status**: Change status of existing items
 - Options: not started, in progress, at risk, blocked, completed, cut
