@@ -129,6 +129,11 @@ For each requirement:
 - Tag each with who should answer (engineering, design, legal, data, stakeholder)
 - Distinguish between blocking questions (must answer before starting) and non-blocking (can resolve during implementation)
 
+### Regional Compliance Note (EMEA)
+- If the feature processes any personal data of EU/UK users, add a blocking Open Question tagged **legal** for Data Protection Officer (DPO) sign-off before implementation starts
+- Reference the relevant GDPR lawful basis (consent, legitimate interest, contract) in the Problem Statement or Requirements section
+- This requirement is specific to this EMEA fork — do not remove the **legal** tag option from Open Questions guidance without checking this section first
+
 ### Timeline Considerations
 - Hard deadlines (contractual commitments, events, compliance dates)
 - Dependencies on other teams' work or releases
