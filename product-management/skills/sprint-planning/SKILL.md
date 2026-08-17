@@ -57,6 +57,9 @@ Plan a sprint by scoping work, estimating capacity, and setting clear goals.
 | [Name] | [X] of [Y] | [X] points/hours | [PTO, on-call, etc.] |
 | **Total** | **[X]** | **[X] points** | |
 
+If **~~calendar** is connected: factor in PTO, holidays, and recurring meeting load, and
+calculate actual available hours per person rather than assuming full days.
+
 ### Sprint Backlog
 | Priority | Item | Estimate | Owner | Dependencies |
 |----------|------|----------|-------|--------------|
@@ -88,7 +91,16 @@ Plan a sprint by scoping work, estimating capacity, and setting clear goals.
 
 ## Tips
 
-1. **Leave buffer** — Plan to 70-80% capacity. You will get interrupts.
+1. **Leave buffer, by role** — ICs: 75-80% utilization. Anyone doing on-call/support that
+   sprint: 50-60%. Anyone with heavy management/meeting load: 60-70%. A flat 70-80% for
+   everyone overcommits your on-call and manager allocations.
 2. **One clear sprint goal** — If you can't state it in one sentence, the sprint is unfocused.
 3. **Identify stretch items** — Know what to cut if things take longer than expected.
 4. **Carry over honestly** — If something didn't ship, understand why before re-committing.
+
+## Common Pitfalls
+
+- Planning to 100% utilization (no buffer for surprises)
+- Ignoring meeting load and context-switching costs when estimating available capacity
+- Not accounting for vacation, holidays, and sick time already known about
+- Treating all points/hours as equal (deep work ≠ interrupt-driven or admin work)
