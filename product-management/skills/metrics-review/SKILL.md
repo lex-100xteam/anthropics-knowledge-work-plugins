@@ -217,6 +217,13 @@ Detailed metrics used to investigate changes in L1 metrics:
 - Segment conversion by source, plan, user type. Different segments convert very differently.
 - Track conversion over time. Is it improving as you iterate on the experience?
 
+### Statistical Significance
+**Before calling any change "significant," check the sample size.** With fewer than ~100 conversions per variant or segment, week-over-week swings of 10-20% are common noise, not signal.
+
+- Use a significance calculator (or ask your data team) before attributing a metric move to a specific cause
+- Require an effect to persist for 2+ consecutive periods before acting on it as real
+- Be especially cautious with segment breakdowns — a segment's small sample size can produce a dramatic-looking swing that vanishes with more data
+
 ### Activation
 **What it measures**: % of new users who reach the moment where they first experience the product's core value.
 
