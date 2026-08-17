@@ -57,6 +57,9 @@ Connect your tools to supercharge this skill:
 
 ## Output Format
 
+Only include fields actually found in search, enrichment, or CRM results — omit a row or
+write "Not found" rather than inferring or guessing a value.
+
 ```markdown
 # Research: [Company or Person Name]
 
@@ -187,6 +190,9 @@ Identify what to research:
 - "Who is the CTO at Notion" → Role-based search
 - "Intel on acme.com" → Domain-based lookup
 ```
+
+If the name is ambiguous or common (multiple companies/people could match), confirm the
+exact match with the user before running searches or enrichment against the wrong entity.
 
 ### Step 2: Web Search (Always)
 
