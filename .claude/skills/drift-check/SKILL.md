@@ -85,6 +85,16 @@ which plugins build on or override the changed behavior.
 
 Write your report to `./drift-report.md` (markdown — CI posts it as a PR comment):
 
+**Write for a non-technical reader.** Diff blocks, file paths, and plugin/skill names stay
+exactly as they are — they're evidence, not prose, and a developer needs them intact to
+verify a claim line by line. But every sentence AROUND that evidence — section titles
+aside — should read like something you'd say out loud to a product manager, not a code
+review comment. Say what changed and why it matters in plain terms. Avoid internal review
+vocabulary in reader-facing text (don't write "matched on" or "likely-applies" verbatim) —
+say what you mean instead. The categories below (`likely-applies`, `different on purpose`,
+`conflicts`, `unclear`) are for YOUR reasoning; translate each into the plain phrasing given
+in the templates further down before it reaches the report.
+
 - The FIRST line of the file must be a status marker — the CI comment turns it into the
   headline icon and category:
   - `<!-- drift-status: critical -->` — any verdict is **conflicts** (a sibling's rules
@@ -122,29 +132,35 @@ Write your report to `./drift-report.md` (markdown — CI posts it as a PR comme
   heading because a heading cannot live inside an alert without breaking the band; the cost
   is that sections no longer appear in a rendered file's outline.
 
-  Then the verdict line. `[!CAUTION]` takes one form; `[!WARNING]` covers a wide range, so
-  its line is what separates "read this before merging" from "nothing here" — never let it
-  be generic:
-  - `[!CAUTION]` → `> **Action required** — port this to <sibling>; it needs its own pull
-    request.`
-  - `[!WARNING]`, sibling **conflicts** or **unclear** → `> **Alert** — <what to read and
-    why>. Nothing to port.`
-  - `[!WARNING]`, **different on purpose** or no siblings → `> **No action** — <why>.`
+  Then the verdict line, in plain language — never generic, and never the raw category name:
+  - `[!CAUTION]` → `> **Worth doing:** also update <sibling> the same way — as its own,
+    separate change.`
+  - `[!WARNING]`, sibling **conflicts** or **unclear** → `> **Read this first:** <what to
+    read and why, in plain terms>. Nothing to copy over.`
+  - `[!WARNING]`, **different on purpose** or no siblings → `> **Nothing to do:** <why, in
+    plain terms>.`
 
   After it, the rest of the section in this order, all still `> `-prefixed:
   1. **The change** — a fenced ` ```diff ` block quoting the diff, trimmed to the lines
      that carry the decision. Name the location in the label when it helps, as in
      `**The change** — under ## Window:`. Evidence, not a proposal: quote, never paraphrase.
-  2. One line saying what the change does.
+  2. One plain sentence saying what the change does — describe the practical effect, not
+     the code.
   3. The sibling table:
-     `| sibling plugin | sibling file | matched on | verdict | why (one line) |`
-     `matched on` says why the pair is a pair — same name and path, near-identical
-     description, same role — so the matching is checkable rather than asserted.
-  4. One bold action line, never vaguer than these:
-     - **To copy it across:** … — likely-applies. Where, and what to preserve.
-     - **Nothing to copy across.** … — conflicts, or different on purpose. Say what rules
-       it out.
-     - **Unclear:** … — unclear. Say exactly what a human should look at.
+     `| plugin | file | why they're alike | what to do | why |`
+     `why they're alike` replaces "matched on" — one plain clause a non-engineer can verify
+     without reading frontmatter (e.g. "does the same job: looking up a company before a
+     sales call", not "identical frontmatter description"). `what to do` replaces the raw
+     verdict name — use one of these plain phrases, never the category word itself:
+     - `likely-applies` → **Should get this too**
+     - `different on purpose` → **Different on purpose**
+     - `conflicts` → **Don't copy — would break something**
+     - `unclear` → **Needs a person to check**
+  4. One bold action line, in plain language, never vaguer than these:
+     - **Also update this:** … — likely-applies. Where, and what to preserve, in plain terms.
+     - **Nothing to copy over.** … — conflicts, or different on purpose. Say in one plain
+       sentence what rules it out.
+     - **Not sure — a person should check:** … — unclear. Say exactly what to look at.
   5. For likely-applies, a **Suggested edit** — a second fenced ` ```diff ` block, directly
      after the action line, showing the edit in the SIBLING (old → new) and introduced by
      the sibling's path and section. Include it ONLY when it would differ from **The
