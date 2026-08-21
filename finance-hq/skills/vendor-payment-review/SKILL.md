@@ -31,6 +31,7 @@ Collect the following before starting the review:
 | Urgent/rush request | Requester is pushing for same-day, off-cycle, or after-hours payment |
 | Duplicate invoice number | Invoice number matches, or is very similar to, one already paid this fiscal year |
 | Round-number invoice amount | Invoice amount is a suspiciously round figure (e.g., exactly $10,000.00) with no supporting detail |
+| Bank/payment detail change | Vendor's bank account, routing number, or payment address differs from what's on file |
 
 ### 🔴 Red flag: new vendor, first payment
 
@@ -44,6 +45,18 @@ New vendors are the single most common entry point for fraudulent payment reques
 
 - Search the AP system for the exact invoice number and for close variants (e.g., trailing "-2", "R", "A")
 - If a match is found, hold the payment and confirm with the vendor directly whether this is a resubmission or a duplicate billing attempt
+
+### 🔴 Red flag: bank or payment routing changes
+
+Any change to a vendor's bank account, routing number, or payment address — however it arrives (email, portal update, phone call, letter) — requires callback verification before the new details are used for payment:
+
+- **Never trust the contact information provided in the change request itself.** A fraudulent request will supply a phone number that reaches the attacker, not the vendor.
+- Call the vendor back using the phone number already on file in the AP system — not a number from the email signature, the letterhead, or the request.
+- Verbally confirm the change with a known contact at the vendor before updating banking details or releasing payment.
+- Document who performed the callback, when it occurred, and how the change was confirmed.
+- If callback verification cannot be completed (vendor contact is unreachable, the phone number on file is outdated, or the vendor denies making the request), escalate to the AP Manager and hold the payment — do not release funds on the new details under any deadline pressure.
+
+This control was added after a near-miss this quarter on a $340K wire, and directly mitigates business email compromise (BEC) fraud, where an attacker impersonates a vendor to redirect a legitimate payment to an account they control.
 
 ## Step 3: Flag findings
 
