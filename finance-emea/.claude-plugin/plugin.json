@@ -1,0 +1,8 @@
+{
+  "name": "finance-emea",
+  "version": "1.0.0",
+  "description": "EMEA regional finance workflows, including vendor payment review with VAT and IBAN/SEPA validation for cross-border and intra-EU vendor payments.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

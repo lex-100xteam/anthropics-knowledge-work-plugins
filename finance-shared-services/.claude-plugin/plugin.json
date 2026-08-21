@@ -1,0 +1,8 @@
+{
+  "name": "finance-shared-services",
+  "version": "1.0.0",
+  "description": "Outsourced shared-services finance workflows, including vendor payment review with maker-checker dual-control sign-off for a third-party AP processing team.",
+  "author": {
+    "name": "Anthropic"
+  }
+}

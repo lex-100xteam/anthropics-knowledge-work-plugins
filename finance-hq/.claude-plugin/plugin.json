@@ -1,0 +1,8 @@
+{
+  "name": "finance-hq",
+  "version": "1.0.0",
+  "description": "Corporate HQ finance workflows, including vendor payment review with fraud-prevention checks for wires, ACH, and check disbursements before they're released.",
+  "author": {
+    "name": "Anthropic"
+  }
+}
